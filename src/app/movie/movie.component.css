@@ -1,0 +1,12 @@
+.card1{
+ width: 18rem;
+}
+
+.p-Description{
+height: 70px;
+text-overflow: ellipsis;
+overflow: hidden;
+}
+.tab{
+position: fixed;
+}

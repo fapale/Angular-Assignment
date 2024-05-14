@@ -3,14 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MovieComponent } from './movie/movie.component';
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { SearchCardsPipe } from './search-cards.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MovieComponent,
+    SearchCardsPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+   FormsModule,
+    CommonModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

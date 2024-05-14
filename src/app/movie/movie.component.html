@@ -1,0 +1,33 @@
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Movie Card</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" [(ngModel)]="searchText" 
+        name="searchCards" placeholder="Search Here" aria-label="Search">
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row ">
+    <div class="col-md-4 col-lg-4" *ngFor="let item of movieData?.results | searchCards:searchText">
+      <div class="card border m-4 border-success card1 col-lg-3 d-flex justify-content-around">
+        <div class="card-body">
+
+          <img [src]="urlImg+'?name='+item.title+'&background=1976d2&color=fff'" alt="">
+          <h5 class="card-title bold">{{item.title}}</h5>
+          <p class="card-text Description p-Description font-monospace">{{item.description}}</p>
+          <p class="card-title text-start fs-6 fw-bold">{{item.genres ? item.genres :"N A"}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
